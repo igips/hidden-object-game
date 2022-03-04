@@ -16,11 +16,17 @@ html {
 
 body {
 	min-height: 100%;
-	
+	display: flex;
 }
 
 #root {
 	height: inherit;
+    flex: 1;
 	display: flex;
 	flex-direction: column;
 }
+
+main {
+    flex: 1;
+}
+
