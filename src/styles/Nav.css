@@ -1,4 +1,29 @@
 nav {
     height: 70px;
     background-color: #222;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    gap: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    z-index: 10;
+}
+
+.char-div {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.char-img {
+    max-width: 38px;
+    height: auto;
+    max-height: 98%;
+}
+
+.char-div span {
+    margin-left: 5px;
 }
