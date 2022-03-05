@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
 import { initializeApp } from "firebase/app";
-import { getFirestore, setDoc, doc } from "firebase/firestore";
+import { getFirestore} from "firebase/firestore";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyBxPTQUVfApMgU8HU5y9oq4GN4i3OYXWcI",
@@ -17,9 +17,14 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
 
+
+
 ReactDOM.render(
 	<React.StrictMode>
 		<App />
 	</React.StrictMode>,
 	document.getElementById("root")
 );
+
+
+export { db}
