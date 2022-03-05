@@ -26,17 +26,17 @@ function Nav(props) {
 	} else  {
 		return (
 			<nav>
-				<div className="char-div">
+				<div  className="char-div">
 					<img className="char-img" src={pic1} alt="" />
 					<span>{name1}</span>
 				</div>
 
-				<div className="char-div">
+				<div  className="char-div">
 					<img className="char-img" src={pic2} alt="" />
 					<span>{name2}</span>
 				</div>
 
-				<div className="char-div">
+				<div  className="char-div">
 					<img className="char-img" src={pic3} alt="" />
 					<span>{name3}</span>
 				</div>
