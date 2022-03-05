@@ -46,3 +46,13 @@
     object-fit: contain;
     display: block;
 }
+
+.tag {
+    color: white;
+    background-color: rgba(34, 34, 44, 0.8);
+    border: 1px solid rgb(99, 101, 176);
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
