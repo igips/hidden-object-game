@@ -22,11 +22,13 @@ function Game(props) {
 	});
 
     function dropDown(e) {
+        const x = Math.round((e.nativeEvent.offsetX / e.nativeEvent.target.offsetWidth) * 100);
+        const y = Math.round((e.nativeEvent.offsetY / e.nativeEvent.target.offsetHeight) * 100);
         const dropDown = document.getElementById("drop-down");
         dropDown.style.display = "block";
         dropDown.style.position = "absolute";
-        dropDown.style.left = e.pageX + "px";
-        dropDown.style.top = e.pageY + "px"; 
+        dropDown.style.left = x + "%";
+        dropDown.style.top = y + "%"; 
     }
 
     function pickChar() {
