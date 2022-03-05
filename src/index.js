@@ -26,5 +26,4 @@ ReactDOM.render(
 	document.getElementById("root")
 );
 
-
 export { db}
