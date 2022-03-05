@@ -8,9 +8,10 @@ import niko from "../img/niko.png";
 import arthur from "../img/arthur.png";
 import kratos from "../img/kratos.png";
 import nathan from "../img/nathan.png";
-import { getDoc, doc } from "firebase/firestore";
+import { getDoc, doc, addDoc, getDocs, collection } from "firebase/firestore";
 import { db } from "../index.js";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Game(props) {
 	const pic1 = props.type === "xbox" ? chief : arthur;
@@ -23,10 +24,39 @@ function Game(props) {
 	const [locX, setLocX] = useState();
 	const [locY, setLocY] = useState();
 	const [found, setFound] = useState(0);
+	const [startTime, setStartTime] = useState(Date.now());
+	const [endingTime, setEndingTime] = useState(0);
+	const [aleaderboard, setLeaderboard] = useState([]);
 
 	useEffect(() => {
 		props.changeNav(props.type);
 	});
+
+	function addToLeaderBoard() {
+		const inputName = document.getElementById("input").value;
+		if (inputName !== "") {
+			addDoc(collection(db, "leaderboard"), { time: endingTime, name: inputName, console: props.type });
+            getLeaderboardFromDB();
+			document.getElementById("input").value = "";
+			document.getElementById("input-div").style.display = "none";
+			document.getElementById("thanks").style.display = "block";
+			document.getElementById("thanks-p").style.display = "none";
+		}
+	}
+
+	async function getLeaderboardFromDB() {
+		const leader = [];
+		const data = await getDocs(collection(db, "leaderboard"));
+		data.forEach((doc) => {
+			leader.push(doc.data());
+		});
+
+		leader.sort((a, b) => {
+			return a.time - b.time;
+		});
+
+		setLeaderboard(leader);
+	}
 
 	function isCoordWithinTwoDegrees(coord1, coord2) {
 		return (
@@ -51,12 +81,15 @@ function Game(props) {
 				) {
 					removeFoundFromDropDown(name);
 					grayOutNav(name);
-                    createTag(name);
+					createTag(name);
 
 					if (found < 2) {
 						setFound(found + 1);
 					} else {
-						alert("You Won");
+						let endingTimestamp = Date.now();
+						setEndingTime((endingTimestamp - startTime) / 1000);
+						getLeaderboardFromDB();
+						document.getElementById("myModal").style.display = "flex";
 					}
 				}
 			}
@@ -65,11 +98,11 @@ function Game(props) {
 
 	function createTag(name) {
 		const tag = document.createElement("div");
-        tag.classList.add("tag");
+		tag.classList.add("tag");
 		tag.textContent = name;
 		tag.style.display = "block";
 		tag.style.position = "absolute";
-		tag.style.left = (locX - 5) + "%";
+		tag.style.left = locX - 5 + "%";
 		tag.style.top = locY + "%";
 		document.getElementById("game-main").appendChild(tag);
 	}
@@ -128,6 +161,52 @@ function Game(props) {
 					<div className="drop-down-div" onClick={() => pickChar(name3)}>
 						<img className="drop-img" src={pic3} alt="" />
 						<span>{name3}</span>
+					</div>
+				</div>
+			</div>
+
+			<div id="myModal" className="modal">
+				<div className="modal-content">
+					<div className="modal-div">
+						<p id="time-p">
+							You finished in <span id="time">{endingTime}</span> seconds!
+						</p>
+					</div>
+					<div id="form-div-outer" className="modal-div">
+						<div id="thanks">
+							<p style={{ marginBottom: "20px" }}>Thank you for playing!</p>
+							<Link id="home-link" to="/">
+								Home
+							</Link>
+						</div>
+						<div id="thanks-p">Enter your name:</div>
+						<form
+							name="a"
+							onSubmit={() => {
+								return false;
+							}}
+							id="input-div"
+							action=""
+						>
+							<input required id="input" type="text" placeholder="Name" />
+							<button onClick={() => addToLeaderBoard()} id="addNameButton">
+								<i className="fa-solid fa-check"></i>
+							</button>
+						</form>
+					</div>
+					<div id="leaderboard">
+						<p>LEADERBOARD</p>
+						{aleaderboard.map((obj) => {
+							console.log(obj);
+							if (obj.console === props.type) {
+								return (
+									<div key={obj.time} className="leaderboard-div">
+										<div>{obj.name}</div>
+										<div>{obj.time}</div>
+									</div>
+								);
+							}
+						})}
 					</div>
 				</div>
 			</div>
