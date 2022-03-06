@@ -117,10 +117,10 @@
     align-items: center;
     justify-content: center;
     height: 30px;
-    border-left: none;
     border: 1px solid gray;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    border-left: none;
     cursor: pointer;
 }
 
