@@ -5,6 +5,7 @@ import niko from "../img/niko.png";
 import arthur from "../img/arthur.png";
 import kratos from "../img/kratos.png";
 import nathan from "../img/nathan.png";
+import { Link } from "react-router-dom";
 
 
 function Nav(props) {
@@ -26,7 +27,11 @@ function Nav(props) {
 	} else  {
 		return (
 			<nav>
-				<div  className="char-div">
+                <div id="home-div">
+                  <Link to="/" id="home-link-nav"> <i  className="fa-solid fa-house"></i> </Link> 
+				</div>
+                
+				<div id="help"  className="char-div">
 					<img className="char-img" src={pic1} alt="" />
 					<span>{name1}</span>
 				</div>
@@ -36,7 +41,7 @@ function Nav(props) {
 					<span>{name2}</span>
 				</div>
 
-				<div  className="char-div">
+				<div id="help-last"  className="char-div">
 					<img className="char-img" src={pic3} alt="" />
 					<span>{name3}</span>
 				</div>
