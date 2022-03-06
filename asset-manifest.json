@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/hidden-object-game/static/css/main.ff08e93a.css",
+    "main.css": "/hidden-object-game/static/css/main.9f0659f1.css",
     "main.js": "/hidden-object-game/static/js/main.84502eda.js",
     "static/media/kratos.png": "/hidden-object-game/static/media/kratos.afb0c5f5efda418c5766.png",
     "static/media/chief.png": "/hidden-object-game/static/media/chief.e5decf243dd3cf64097b.png",
@@ -11,11 +11,11 @@
     "static/media/marcus.png": "/hidden-object-game/static/media/marcus.1a52018cb9ad5803c7c3.png",
     "static/media/arthur.png": "/hidden-object-game/static/media/arthur.ab8a50356841af764c0d.png",
     "index.html": "/hidden-object-game/index.html",
-    "main.ff08e93a.css.map": "/hidden-object-game/static/css/main.ff08e93a.css.map",
+    "main.9f0659f1.css.map": "/hidden-object-game/static/css/main.9f0659f1.css.map",
     "main.84502eda.js.map": "/hidden-object-game/static/js/main.84502eda.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff08e93a.css",
+    "static/css/main.9f0659f1.css",
     "static/js/main.84502eda.js"
   ]
 }
