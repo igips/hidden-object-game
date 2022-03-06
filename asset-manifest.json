@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/hidden-object-game/static/css/main.ff08e93a.css",
+    "main.js": "/hidden-object-game/static/js/main.84502eda.js",
+    "static/media/kratos.png": "/hidden-object-game/static/media/kratos.afb0c5f5efda418c5766.png",
+    "static/media/chief.png": "/hidden-object-game/static/media/chief.e5decf243dd3cf64097b.png",
+    "static/media/ps4.jpg": "/hidden-object-game/static/media/ps4.3a47c71926d382b0b0f8.jpg",
+    "static/media/x.jpg": "/hidden-object-game/static/media/x.8475324bba6ae8e06a50.jpg",
+    "static/media/nathan.png": "/hidden-object-game/static/media/nathan.f7962f3dd51b25bc3a78.png",
+    "static/media/niko.png": "/hidden-object-game/static/media/niko.77e717fa692d6aeff25a.png",
+    "static/media/marcus.png": "/hidden-object-game/static/media/marcus.1a52018cb9ad5803c7c3.png",
+    "static/media/arthur.png": "/hidden-object-game/static/media/arthur.ab8a50356841af764c0d.png",
+    "index.html": "/hidden-object-game/index.html",
+    "main.ff08e93a.css.map": "/hidden-object-game/static/css/main.ff08e93a.css.map",
+    "main.84502eda.js.map": "/hidden-object-game/static/js/main.84502eda.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ff08e93a.css",
+    "static/js/main.84502eda.js"
+  ]
+}
