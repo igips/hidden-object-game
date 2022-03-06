@@ -54,6 +54,7 @@
 	padding: 5px 8px;
 	font-family: "Roboto", sans-serif;
 	font-weight: 300;
+    
 }
 
 .modal {
@@ -110,7 +111,6 @@
 .modal-div button {
     background-color: #222;
     border: none;
-    border-radius: 5px;
     color: white;
     font-size: 20px;
     display: flex;
@@ -206,6 +206,7 @@
     justify-content: center;
     width: 275px;
     border-radius: 10px;
+    z-index: 9;
 }
 
 #try-again-but {
