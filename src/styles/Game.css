@@ -194,6 +194,42 @@
     display: none;
 }
 
+#try-again {
+    display: none;
+    position: fixed;
+    top: 13%;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    background-color: rgb(34, 34, 44);
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 275px;
+    border-radius: 10px;
+}
+
+#try-again-but {
+    color: white;
+    cursor: pointer;
+    background-color: purple;
+    width: 122.98px;
+    height: 39px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 1em;
+}
+
+#thanks-inner {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
 
 @media (max-width: 500px) {
 	.modal-content p {
