@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import "../styles/Game.css";
 import xbox from "../img/x.jpg";
 import ps4 from "../img/ps4.jpg";
@@ -12,6 +13,8 @@ import { getDoc, doc, addDoc, getDocs, collection } from "firebase/firestore";
 import { db } from "../index.js";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
+
 
 function Game(props) {
 	const pic1 = props.type === "xbox" ? chief : arthur;
@@ -36,7 +39,7 @@ function Game(props) {
 		const inputName = document.getElementById("input").value;
 		if (inputName !== "") {
 			addDoc(collection(db, "leaderboard"), { time: endingTime, name: inputName, console: props.type });
-            getLeaderboardFromDB();
+			getLeaderboardFromDB();
 			document.getElementById("input").value = "";
 			document.getElementById("input-div").style.display = "none";
 			document.getElementById("thanks").style.display = "block";
@@ -91,6 +94,10 @@ function Game(props) {
 						getLeaderboardFromDB();
 						document.getElementById("myModal").style.display = "flex";
 					}
+				} else {
+					document.getElementById("try-again-p").textContent = `That's not ${name}. Try again!`;
+					document.getElementById("try-again").style.display = "flex";
+					setTimeout(() => (document.getElementById("try-again").style.display = "none"), 1500);
 				}
 			}
 		});
@@ -164,6 +171,9 @@ function Game(props) {
 					</div>
 				</div>
 			</div>
+			<div id="try-again">
+				<p id="try-again-p">That's not Marcus. Try again!</p>
+			</div>
 
 			<div id="myModal" className="modal">
 				<div className="modal-content">
@@ -174,14 +184,19 @@ function Game(props) {
 					</div>
 					<div id="form-div-outer" className="modal-div">
 						<div id="thanks">
-							<p style={{ marginBottom: "20px" }}>Thank you for playing!</p>
-							<Link id="home-link" to="/">
-								Home
-							</Link>
+                            <p>Thank you for playing!</p>
+							<div id="thanks-inner">
+								
+								<Link id="home-link" to="/">
+									Home
+								</Link>
+
+								<button id="try-again-but" onClick={() => location.reload()}>Try Again!</button>
+                                
+							</div>
 						</div>
 						<div id="thanks-p">Enter your name:</div>
 						<form
-							name="a"
 							onSubmit={() => {
 								return false;
 							}}
@@ -197,7 +212,6 @@ function Game(props) {
 					<div id="leaderboard">
 						<p>LEADERBOARD</p>
 						{aleaderboard.map((obj) => {
-							console.log(obj);
 							if (obj.console === props.type) {
 								return (
 									<div key={obj.time} className="leaderboard-div">
