@@ -5,7 +5,6 @@ nav {
     justify-content: center;
     position: fixed;
     width: 100%;
-    gap: 30px;
     padding-left: 10px;
     padding-right: 10px;
     z-index: 10;
@@ -28,8 +27,56 @@ nav {
     margin-left: 5px;
 }
 
+#home-div {
+   min-width: 40px; 
+   height: 30px;
+   margin-top: auto;
+   margin-bottom: auto;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-right: 10px;
+}
+
+#help {
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+#help-last {
+    margin-right: auto;
+    margin-left: 30px;
+}
+
+#home-link-nav {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+#fa-fa-fa {
+    cursor: pointer;
+}
+
+@media (max-width: 400px) {
+    #help {
+        margin-right: 10px;
+    }
+    
+    #help-last {
+        margin-left: 10px;
+    }
+
+	.char-div span {
+        font-size: 15px;
+        width: 50px;
+    }
+}
+
 @media (max-width: 320px) {
 	.char-div span {
         font-size: 10px;
+        width: 30px
     }
 }
