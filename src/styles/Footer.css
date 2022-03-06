@@ -21,5 +21,11 @@ i:hover {
    
 }
 
+@media (max-width: 300px) {
+	footer {
+        padding: 10px;
+    }
+}
+
 
 
