@@ -1,6 +1,6 @@
 # Hidden object game
 
-Hidden object game made with React and Firebase.
+Hidden object game made with React and Firebase. 
 
 [Live Demo](https://igips.github.io/hidden-object-game/) :point_left:
 
